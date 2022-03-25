@@ -1,0 +1,12 @@
+div.head{
+    border-radius: 50%;
+    height: 30%;
+    width: 100%;
+    background-color: green;
+}
+body{
+    background-color: yellowgreen;
+}
+.hello{
+    display: inline-block;
+}
