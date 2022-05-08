@@ -41,8 +41,7 @@ while(1):
         v=int(input("ENTER THE VALUE: "))
         z[v]=1
     winner=check_Win(x,z)
-    t=1-t
     if(winner!=-1):
         print("MATCH IS OVER........")
         break
-
+    t=1-t
