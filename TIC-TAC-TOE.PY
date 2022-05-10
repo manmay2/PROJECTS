@@ -5,7 +5,7 @@ def check_Win(x,z):
         if(sum(x[i[0]],x[i[1]],x[i[2]])==3):
             print("........X HAS WON THE MATCH........")
             return 1
-        if(sum(z[i[0]],z[i[1]],z[i[2]])==3):
+        elif(sum(z[i[0]],z[i[1]],z[i[2]])==3):
             print("........O HAS WON THE MATCH!! BETTER LUCK NEXT TIME........")
             return 0
         return -1
