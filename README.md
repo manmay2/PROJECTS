@@ -4,7 +4,7 @@
 
 # PROJECTS
 Hello this is my repository which contains various projects on various languages like 
-HTML,CSS,JAVASCRIPT,JAVA,PYTHON,C and C++.
+HTML,CSS,JAVASCRIPT,JAVA,PYTHON,C,C++ and SQL
 
 
 
@@ -36,5 +36,5 @@ If you have any feedback, feel free to reach out manmaycoder@gmail.com
 
 
 ## 🛠 Skills
-Javascript, HTML, CSS,C,C++,PYTHON and JAVA
+Javascript, HTML, CSS,C,C++,PYTHON,JAVA and SQL
 
