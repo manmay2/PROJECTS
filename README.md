@@ -1,5 +1,5 @@
 
-![Logo](pro.JPG)
+![Logo](PROJECTS/pro.JPG)
 
 
 # PROJECTS
