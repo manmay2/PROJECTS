@@ -1,5 +1,5 @@
 import mysql.connector as sqltor
-mycon=sqltor.connect(host="localhost",user="root",passwd="2%0*2)0$Happy",database="project")
+mycon=sqltor.connect(host="localhost",user="root",passwd="",database="project")
 ans="yes"
 cursor=mycon.cursor()
 ans=input("DO YOU WANT TO ENTER FOR STUDENTS GRADE: YES/NO ??????").lower()
