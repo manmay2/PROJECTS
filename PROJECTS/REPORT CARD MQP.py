@@ -19,7 +19,7 @@ if(ch>=1 and ch<=4):
         cls=input("ENTER THE CLASS IN WHICH THE STUDENT IS STUDYING: ")
         f_name=input("ENTER THE FATHER'S NAME OF THE STUDENT: ")
         m_name=input("ENTER THE MOTHER'S NAME OF THE STUDENT: ")
-        dob=input("ENTER THE DATE OF BIRTH OF THE STUDENT: ")
+        dob=input("ENTER THE DATE OF BIRTH OF THE STUDENT IN THE FORMAT YYYY-MM-DD: ")
         eng=float(input("ENTER THE MARKS IN ENGLISH: "))
         hin=float(input("ENTER THE MARKS IN HINDI: "))
         sci=float(input("ENTER THE MARKS IN SCIENCE: "))
@@ -42,7 +42,7 @@ if(ch>=1 and ch<=4):
         elif(per<40):
             g="D"
         table_name=str(roll)+cls
-        query="create table {} (Name varchar(30),Class varchar(3),Father_Name varchar(30),Mother_Name varchar(30),DOB Date,English decimal(10,1),Hindi decimal(10,1),Science decimal(10,1),Social_Science decimal(10,1),Mathematics decimal(10,1),Total_Marks decimal(10,1),Percentage decimal(10,1),Overall_Grade varchar(2));".format(table_name)
+        query="create table if not exists {} (Name varchar(30),Class varchar(5),Father_Name varchar(30),Mother_Name varchar(30),DOB Date,English decimal(10,1),Hindi decimal(10,1),Science decimal(10,1),Social_Science decimal(10,1),Mathematics decimal(10,1),Total_Marks decimal(10,1),Percentage decimal(10,1),Overall_Grade varchar(2));".format(table_name)
         cursor.execute(query)
         query="insert into {} values('{}','{}','{}','{}','{}',{},{},{},{},{},{},{},'{}');".format(table_name,name,cls,f_name,m_name,dob,eng,hin,sci,sst,math,total_marks,per,g)
         cursor.execute(query)    
@@ -177,7 +177,7 @@ if(ch>=1 and ch<=4):
                                 
                     
                 elif(choice==4):
-                    # chnage in DOB
+                    # change in DOB
                         birth=float(input("Enter the UPDATED DATE OF BIRTH: "))
                         cursor.execute("update {} where DOB='{}'".format(t_NAME,birth))
                         mycon.commit()
