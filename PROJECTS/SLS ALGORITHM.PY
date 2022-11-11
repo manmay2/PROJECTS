@@ -4,7 +4,6 @@ num_str=['4','3','1','9','0','2','7','5','6','8']
 sym_str=['!','@','#','$','%','^','&','*','(',')']
 sym2_str=['~','`','_','-','+','"','=','?','/',',']
 sym3_str=['<','>','.']
-pow=len(paas)+1
 for i in paas:
     if(i not in num_str and i not in sym_str and i not in sym2_str):
         k=str(ord(i))
@@ -17,10 +16,11 @@ for i in paas:
         li_paas.append(num_str[(sym3_str.index(i))])
     else:
         li_paas.append(i)
-step1=''
+step1='' 
 for j in li_paas:
     step1+=j
 step2=''
+pow=len(step1)+1
 st=''
 for g in step1:
     pow=pow-1
