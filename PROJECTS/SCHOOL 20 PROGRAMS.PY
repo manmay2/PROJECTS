@@ -61,20 +61,9 @@ def hass():
 hass()        
 
 
-#6. copy text of one file to another and repeated space should be replaced by the single one  using def fucntions.
-def hello():
-    F=input("Enter the file name to copy from: ")
-    f=input("Enter the file name to be pasted simultaneously: ")
-    with open(F) as k:
-        li=k.read().split()
-        with open(f,"w") as K:
-            for  i in li:
-                K.write(i+" ")
-
-hello()
 
 
-#7. write a function named AMCount() that counts the occurence of A and M (including a and m) and display it.
+#6. write a function named AMCount() that counts the occurence of A and M (including a and m) and display it.
 def AMCount():
     f1=input("ENter any random file name you want")
     with open(f1,"w") as kh:
@@ -91,7 +80,7 @@ def AMCount():
         print("M or m: ",ct_m)
 AMCount()
 
-#8. write a method/function DISPLAYWORDS() to read lines from any text file and display the words which are less  than 4
+#7. write a method/function DISPLAYWORDS() to read lines from any text file and display the words which are less  than 4
 def DISPLAYWORDS():
     kf=input("ENter the file name which you wanna count the words: ")
     with open(kf,"r") as kgf:
@@ -106,18 +95,10 @@ print(DISPLAYWORDS())
 
 
 
-#9. write a function/method where to display the lines starting with A.
-def start():
-    str_1=''
-    with open(input("Enter any file name to open that file: ")) as f:
-        for i in f.readlines():
-            if(i[0]=="a" or i[0]=="A"):
-                str_1=str_1+i
-        return (str_1)
-print(start())
 
 
-#10. create a function/method named count which will count the size of the file and display it's size in bytes.
+
+#8. create a function/method named count which will count the size of the file and display it's size in bytes.
 def count():
     ct=0
     with open(input("Enter the size of the file which you wanna count the size: ")) as gf:
@@ -129,15 +110,9 @@ print("Size of the file is: ",count(),"Bytes")
 
 
 
-#11. create a file with some name separated by newline characters with out using write() function.
-with open("trialio.txt",'w') as jk:
-    li=[]
-    for i in range(input("enter the number of names you wanna enter: ")):
-        name=input("enter the name you want: ")
-        li.append(name)
-    jk.writelines(li)
 
-#12. write a method/function that will take marks, name, roll from the user and append in the text file.
+
+#9. write a method/function that will take marks, name, roll from the user and append in the text file.
 def append():
     with open(input("ENTER ANY FILE NAME: "),"w") as fj:
         for i in range(int(input("ENTER HOW MANY INPUTS"))):
@@ -149,7 +124,7 @@ def append():
 append()
 
 
-#13. wap that will combine each line from first file with the corresponding line with the second line.
+#10. wap that will combine each line from first file with the corresponding line with the second line.
 with open("poem1.txt") as f:
     with open("poem.txt") as g:
         str=''
@@ -158,7 +133,7 @@ with open("poem1.txt") as f:
             print(str)
 
 
-#14. WAP THAT WILL MODIFY THE NAME OF THE ROLL NO. 12 AS GURNAM IN THE FILE Stu.dat.
+#11. WAP THAT WILL MODIFY THE NAME OF THE ROLL NO. 12 AS GURNAM IN THE FILE Stu.dat.
 import pickle 
 stu={}
 found=False
@@ -180,7 +155,7 @@ except EOFError:
     fin.close()
 
 
-#15. write a program to open file Stu.dat and search for records with the roll no. as 12 or 14.
+#12. write a program to open file Stu.dat and search for records with the roll no. as 12 or 14.
 #    If found, display the records of that very roll no.
 import pickle
 stu={}
@@ -203,7 +178,7 @@ except EOFError:
 
 
 
-# 16. WAP that will read the records of this csv file and display them.
+# 13. WAP that will read the records of this csv file and display them.
 import csv
 with open('hello.csv','r') as fsh:
     creader=csv.reader(fsh)
@@ -211,14 +186,14 @@ with open('hello.csv','r') as fsh:
         print(rec)
 
     
-#17.  WAP that will display the first three rows fetched from student table of the mysql database 'test'.
+#14.  WAP that will display the first three rows fetched from student table of the mysql database 'test'.
 import mysql.connector as sqltor
-mycon=sqltor.connect(host="localhost",user="programmer",paswd="hackerthecoder",database="test")
+mycon=sqltor.connect(host="anker",user="learner",passwd="thehacker",database="test")
 if mycon.is_connected()==False:
     print('Error connecting to MYSQL database....Try again later')
 else:
     cursor=mycon.cursor()
-    cursor.execute("select * from student")
+    cursor.execute("select * from trial")
     data=cursor.fetchmany(3)
     count=cursor.rowcount
     for row in data:
@@ -226,4 +201,27 @@ else:
 mycon.close()
 
 
-#18. 
+#15. WAP THAT WILL INSERT VALUES IN THE MYSQL DATABASE.....VIA CONNECTIVITY B/W PYTHON AND SQL.
+import mysql.connector as sqltor
+mycon=sqltor.connect(host='localhost',user='root',passwd='Happy',database='test')
+if(mycon.is_connected==False):
+    print("ERROR IN CONNECTING TO THE SQL DATABASE...PLEASE CHECK EVERYTHING AND TRY AGAIN LATER!!")
+else:
+    cursor=mycon.cursor()
+    q="insert into todo values('{}','{}','{}','{}','{}','{}')".format("hello","world","of","pro","gram","ing")
+    cursor.execute(q)
+    mycon.commit()
+    mycon.close()
+
+
+#16. WAP THAT WILL UPDATE A PARTICULAR RECORD...IN A DATABASE TABLE...
+import mysql.connector as p
+mycon=p.connect(host="yup",user="root",passwd='hi',database="hello")
+cursor=mycon.cursor()
+q1="update todo set TASK_TITLE='{}'".format(" ")
+cursor.execute(q1)
+mycon.commit()
+mycon.close()
+
+
+#17. wap that will create a function of ASCII(str) which will convert all the strings with its corresponding ASCII////and display.
