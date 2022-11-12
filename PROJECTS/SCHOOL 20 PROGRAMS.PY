@@ -225,3 +225,42 @@ mycon.close()
 
 
 #17. wap that will create a function of ASCII(str) which will convert all the strings with its corresponding ASCII////and display.
+def ASCII(str1):
+    for i in str1:
+        if(i!=' '):
+            print(ord(i),end='')
+        elif(i==' '):
+            print(' ',end=' ')
+ASCII('TECHNICAL INSTITUTE OF MUNICH')
+
+
+#18. write a program which will create 2 different function to count the number of vowels and consonant and also print them in a list.
+def vowel(str1):
+    v='AEIOUaeiou'
+    vo=list()
+    ct_v=0
+    for i in str1:
+        if(i in v):
+            vo.append(i)
+            ct_v+=1
+    print("LIST OF THE VOWELS PRESENT IN THE STRING IS: ")
+    print(vo)
+    print('THE COUNT OF THE VOWELS IS: ')
+    print(ct_v)
+def conso(str1):
+    v='AEIOUaeeiou'
+    ct_c=0
+    co=list()
+    for i in str1:
+        if(i not in v):
+            ct_c+=1
+            co.append(i)
+    print("THE COUNT OF THE CONSONANT IS: ")
+    print(ct_c)
+    print("LIST OF ALL THE CONSONANT IS: ")
+    print(co)
+vowel('TECHNICAL INSTITUTE OF MUNICH')
+conso('TECHNICAL INSTITUTE OF MUNICH')
+
+
+# STACKS PROGRAMS NEED TO BE DONE ALONE......AS NOT STARTED..
