@@ -263,4 +263,20 @@ vowel('TECHNICAL INSTITUTE OF MUNICH')
 conso('TECHNICAL INSTITUTE OF MUNICH')
 
 
-# STACKS PROGRAMS NEED TO BE DONE ALONE......AS NOT STARTED..
+#19. write a program which will add 'n' elements in an empty tuple entered by the user.
+t=tuple()
+n=int(input("Enter How many elements you wanna enter: ")) 
+for i in range(n):
+    num=eval(input("Enter elements to append in the tuple: "))
+    t=t+(num,)
+print("The Tuple now is: ")
+print(t)
+
+
+#20. reversing a tuple.
+t=tuple(input("Enter any tuple: "))
+li=list(t)
+t_new=tuple(li[::-1])
+print("The new reverse tuple is as follows: ")
+print(t_new)
+
