@@ -274,9 +274,7 @@ print(t)
 
 
 #20. reversing a tuple.
-t=tuple(input("Enter any tuple: "))
-li=list(t)
-t_new=tuple(li[::-1])
-print("The new reverse tuple is as follows: ")
-print(t_new)
+t=eval(input("Enter any tuple: "))
+print("reverse tuple is as follows: ")
+print(t[::-1])
 
