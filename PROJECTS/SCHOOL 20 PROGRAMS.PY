@@ -170,7 +170,7 @@ try:
             print(stu)
             found=True
 except EOFError:
-    if found=False:
+    if found==False:
         print("No such records found in the file")
     else:
         print("Search Successful.")
