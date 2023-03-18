@@ -1,7 +1,7 @@
 # WELCOME TO THE HTML CREATOR WHICH WILL HELP US TO GENERATE CODE FOR HTML AND CSS
 
 lorem=''
-
+import os
 def insert(bas,add,ini):
 	add=add[::-1]
 	for i in add:
