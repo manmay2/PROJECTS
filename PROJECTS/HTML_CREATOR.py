@@ -8,13 +8,19 @@ def insert(bas,add,ini):
 
 		bas.insert(bas.index(ini)+1,i)
 
+
+def fileWriter(tags,file,css_bas):
+	try:
+		css_bas.insert(0,tags)		
+		file.writelines(css_bas)
+		css_bas.remove(tags)
+	except:
+		pass
 def p_(bas,ini,f2,css_bas):	
 	add=['<p>\n','Sample Text Starts here............','</p>\n']
 	insert(bas,add,ini)
 	ini='</p>\n'
-	css_bas.insert(0,'.p\n')		
-	f2.writelines(css_bas)
-	css_bas.remove('.p\n')
+	fileWriter('.p\n',f2,css_bas)
 def img_(bas,ini,f2,css_bas):
 	# src=input("ENTER THE IMAGE'S FILENAME : ")
 	# height=int(input("ENTER THE HEIGHT OF THE IMAGE : "))
@@ -23,9 +29,7 @@ def img_(bas,ini,f2,css_bas):
 	add=["<img src=xyz.jpg,height=123,width=123,alt='SAMPLE GOES HERE.....'>\n"]
 	insert(bas,add,ini)
 	ini=add[0]
-	css_bas.insert(0,'.img\n') 
-	f2.writelines(css_bas)
-	css_bas.remove('.img\n')
+	fileWriter('.img\n',f2,css_bas)
 def hx_(bas,ini,f2,css_bas):
 	# x=input("ENTER THE HEADING TAG FROM 1-6 : ")
 
@@ -33,55 +37,49 @@ def hx_(bas,ini,f2,css_bas):
 	insert(bas,add,ini)
 	ini='</h1>\n'
 
-	css_bas.insert(0,'.h1\n')
-	f2.writelines(css_bas)
-	css_bas.remove('.h1\n')
+	fileWriter('.h1\n',f2,css_bas)
 def sup_(bas,ini,sup,f2,css_bas):
 	if(sup=='<sub>'):
 		add=['<sub>\n','Sample Text Starts here............\n','</sub>\n']
 		insert(bas,add,ini)
 		ini='</sub>\n'
-		css_bas.insert(0,'.sub\n')
-		f2.writelines(css_bas)
-		css_bas.remove('.sub\n')
+		fileWriter('.sub\n',f2,css_bas)
 	elif(sup=='<sup>'):
 		add=['<sup>\n','Sample Text Starts here............\n','</sup>\n']
 		insert(bas,add,ini)
 		ini='</sup>\n'
-		css_bas.insert(0,'.sup\n')
-		f2.writelines(css_bas)
-		css_bas.remove('.sup\n')
+		fileWriter('.sup\n',f2,css_bas)
 			
 
 def ol_(bas,ini,f2,css_bas):
 	add=['<ol type=' '>\n','</ol>\n']
 	insert(bas,add,ini)
 	ini='<ol type=' '>\n'
-	css_bas.insert(0,'.ol\n')
-	f2.writelines(css_bas)
-	css_bas.remove('.ol\n')
+	fileWriter('.ol\n',f2,css_bas)
 def li_(bas,ini,f2,css_bas):
 	add=['<li>\n',lorem,'\n','</li>\n']
 	insert(bas,add,ini)
-	css_bas.insert(0,'.li\n')
-	f2.writelines(css_bas)
-	css_bas.remove('.li\n')																								
+	fileWriter('.li\n',f2,css_bas)																							
 def ul_(bas,ini,f2,css_bas):
 	add=['<ul style=' '>\n','</ul>\n']
 	insert(bas,add,ini)
 	ini='<ul style=' '>\n'
-	css_bas.insert(0,'.ul\n')
-	f2.writelines(css_bas)
-	css_bas.remove('.ul\n')
+	fileWriter('.ul\n',f2,css_bas)
 def main():
 	title_=input("[*] ENTER THE TITLE OF THE DOCUMENT : ")
 	file_html=input("[*] ENTER THE FILENAME FOR THE HTML TEMPLATE : ")
 	file_css=input("[*] ENTER THE FILENAME FOR THE CSS TEMPLATE : ")
 	file_js=input("[*] ENTER THE FILENAME FOR THE JAVASCRIPT FILE :  ")
 	global lorem
-	with open(file_html,'w') as f1:
-		with open(file_css,'w') as f2: 
-			with open(file_js,'w') as f3:
+	f2=None
+	f3=None
+	if(file_css!='' and len(file_css.split("."))==2 and file_css.split(".")[1].strip()=="css"):
+		f2=open(file_css,'w')
+	if(file_js!='' and len(file_js.split("."))==2 and file_js.split(".")[1].strip()=="js"):
+		f3=open(file_js,'w')
+	try:
+		if(file_html!='' and len(file_html.split("."))==2 and file_html.split(".")[1].strip()=="html"):
+			with open(file_html,'w') as f1:
 				p=input("[*] DO YOU WANT TO ADD PARAGRAPH TAG : Y/N : ").upper()
 				img=input("[*] DO YOU WANT TO ADD IMAGE TAG : Y/N : ").upper()
 				H=input("[*] DO YOU WANT TO ADD HEADER  TAG : Y/N : ").upper()
@@ -117,5 +115,10 @@ def main():
 					ini='</ul>\n'
 				
 				f1.writelines(bas)
+		else:
+			print("PLEASE ENTER A VALID FILE NAME. FILE NAME CAN'T START WITH _ OR DIGIT")
+	except:
+		pass
+
 main()
 
