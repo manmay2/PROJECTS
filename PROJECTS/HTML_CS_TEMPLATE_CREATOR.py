@@ -1,7 +1,6 @@
 # WELCOME TO THE HTML CREATOR WHICH WILL HELP US TO GENERATE CODE FOR HTML AND CSS
 
-lorem=''
-import os
+lorem='Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nobis doloremque exercitationem eveniet nesciunt at. Voluptates provident vero amet vel oue deleniti quia explicabo?' 
 def insert(bas,add,ini):
 	add=add[::-1]
 	for i in add:
@@ -66,24 +65,26 @@ def ul_(bas,ini,f2,css_bas):
 	ini='<ul style=' '>\n'
 	fileWriter('.ul\n',f2,css_bas)
 def main():
-	title_=input("[*] ENTER THE TITLE OF THE DOCUMENT : ")
-	file_html=input("[*] ENTER THE FILENAME FOR THE HTML TEMPLATE : ")
-	file_css=input("[*] ENTER THE FILENAME FOR THE CSS TEMPLATE : ")
-	file_js=input("[*] ENTER THE FILENAME FOR THE JAVASCRIPT FILE :  ")
-	global lorem
-	f2=None
-	f3=None
-	if(file_css!='' and len(file_css.split("."))==2 and file_css.split(".")[1].strip()=="css"):
-		f2=open(file_css,'w')
-	# else:
-	# 	print("INVALID FILENAME OR EXTENSION")
-	if(file_js!='' and len(file_js.split("."))==2 and file_js.split(".")[1].strip()=="js"):
-		f3=open(file_js,'w')
-	# else:
-	# 	print("INVALID FILENAME OR EXTENSION")
 	try:
+		file_html=input("[*] ENTER THE FILENAME FOR THE HTML TEMPLATE : ")
+		file_css=input("[*] ENTER THE FILENAME FOR THE CSS TEMPLATE : ")
+		file_js=input("[*] ENTER THE FILENAME FOR THE JAVASCRIPT FILE :  ")
+		global lorem
+		f2=None
+		f3=None
+		if(file_css!='' and len(file_css.split("."))==2 and file_css.split(".")[1].strip()=="css"):
+			f2=open(file_css,'w')
+		elif(file_css!=''):
+			print("INVALID FILENAME OR EXTENSION iN CSS")
+			return
+		if(file_js!='' and len(file_js.split("."))==2 and file_js.split(".")[1].strip()=="js"):
+			f3=open(file_js,'w')
+		elif(file_js!=''):
+			print("INVALID FILENAME OR EXTENSION iN JS")
+			return
 		if(file_html!='' and len(file_html.split("."))==2 and file_html.split(".")[1].strip()=="html"):
 			with open(file_html,'w') as f1:
+				title_=input("[*] ENTER THE TITLE OF THE DOCUMENT : ")
 				p=input("[*] DO YOU WANT TO ADD PARAGRAPH TAG : Y/N : ").upper()
 				img=input("[*] DO YOU WANT TO ADD IMAGE TAG : Y/N : ").upper()
 				H=input("[*] DO YOU WANT TO ADD HEADER  TAG : Y/N : ").upper()
@@ -96,7 +97,7 @@ def main():
 				'    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n',
 				'    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n',f'    <title>{title_}</title>\n',f'<link rel="stylesheet" href="{file_css}"></head>\n',
 				'<body>\n','</body>\n','</html>']
-				css_bas=["{\n","color : Blue;\n","font-size : 50px;\n","font-family : 'Times New Roman',Times,Serif;\n","background-color : Green;\n","background-image : src.jpg;\n","background : url(src.jpg);\n","background-size : 300px 100px;\n","background-repeat : no-repeat;\n","}\n"]
+				css_bas=["{\n","color : Blue;\n","font-size : 50px;\n","font-family : 'Times New Roman',Times,Serif;\n","background-color : Green;\n","background-size : 300px 100px;\n","background-repeat : no-repeat;\n","}\n"]
 				if(p=='Y'):
 					p_(bas,ini,f2,css_bas)
 					
@@ -119,8 +120,9 @@ def main():
 					ini='</ul>\n'
 				
 				f1.writelines(bas)
+			print(f"Succesfully Created {file_html} {(','+file_css) if file_css != None else ''} {(','+file_js) if file_js!=None else ''}")
 		else:
-			print("PLEASE ENTER A VALID FILE NAME.")
+			print("PLEASE ENTER A VALID FILE NAME FOR HTML.")
 	except:
 		pass
 
