@@ -75,8 +75,12 @@ def main():
 	f3=None
 	if(file_css!='' and len(file_css.split("."))==2 and file_css.split(".")[1].strip()=="css"):
 		f2=open(file_css,'w')
+	# else:
+	# 	print("INVALID FILENAME OR EXTENSION")
 	if(file_js!='' and len(file_js.split("."))==2 and file_js.split(".")[1].strip()=="js"):
 		f3=open(file_js,'w')
+	# else:
+	# 	print("INVALID FILENAME OR EXTENSION")
 	try:
 		if(file_html!='' and len(file_html.split("."))==2 and file_html.split(".")[1].strip()=="html"):
 			with open(file_html,'w') as f1:
@@ -92,7 +96,7 @@ def main():
 				'    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n',
 				'    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n',f'    <title>{title_}</title>\n',f'<link rel="stylesheet" href="{file_css}"></head>\n',
 				'<body>\n','</body>\n','</html>']
-				css_bas=["{\n","color : 'Blue';\n","font-size : 50px';\n","font-family : 'Times New Roman',Times,Serif;\n","background_color : 'Green';\n","background-image : 'src.jpg';\n","background : url(src.jpg);\n","background-size : 300px 100px;\n","background-repeat : no-repeat;\n","}\n"]
+				css_bas=["{\n","color : Blue;\n","font-size : 50px;\n","font-family : 'Times New Roman',Times,Serif;\n","background-color : Green;\n","background-image : src.jpg;\n","background : url(src.jpg);\n","background-size : 300px 100px;\n","background-repeat : no-repeat;\n","}\n"]
 				if(p=='Y'):
 					p_(bas,ini,f2,css_bas)
 					
@@ -116,7 +120,7 @@ def main():
 				
 				f1.writelines(bas)
 		else:
-			print("PLEASE ENTER A VALID FILE NAME. FILE NAME CAN'T START WITH _ OR DIGIT")
+			print("PLEASE ENTER A VALID FILE NAME.")
 	except:
 		pass
 
