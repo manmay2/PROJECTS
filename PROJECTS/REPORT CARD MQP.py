@@ -61,9 +61,14 @@ while True:
                     cursor.execute("select * from {};".format(t_name))
                     data1=cursor.fetchall()
                     li=["Name","Class","Father's_Name","Mother's_Name","Date_Of_Birth","English","Hindi","Science","Social_Science","Mathematics","Total_Marks","Percentage%","Grade"]
+                    max_ct=0
+                    for i in li:
+                        if(max_ct<len(i)):
+                            max_ct=len(i)
+                    print("----------REPORT CARD----------- ")
                     for i in data1:
                         for j in range(0,len(i)):
-                            print(li[j]," : ",data1[0][j])
+                            print(li[j],(max_ct-len(li[j]))*' '," : ",data1[0][j])
         elif(ch==3):
             ro=int(input("Enter the Roll No.: "))
             cls=input("Enter the class of the student")
