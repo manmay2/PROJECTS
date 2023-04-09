@@ -1,5 +1,5 @@
 import mysql.connector as sqltor
-mycon=sqltor.connect(host="localhost",user="root",passwd="2%0*2)0$Happy",database="project")
+mycon=sqltor.connect(host="localhost",user="root",passwd="",database="project")
 cursor=mycon.cursor()
 print("_______________________________NUEMANN'S INSTITUTE OF TECHNOLOGY_______________________________")
 print("_______________________________WELCOME TO OUR INSTITUTE________________________________________________________")
